@@ -1,0 +1,9 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: traefik-proxy
+  labels:
+    k8s-app: traefik-proxy
+spec:
+  replicas: 1
