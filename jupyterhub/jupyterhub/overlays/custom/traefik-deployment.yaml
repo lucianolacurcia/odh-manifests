@@ -6,4 +6,4 @@ metadata:
   labels:
     k8s-app: traefik-proxy
 spec:
-  replicas: 1
+  replicas: 2
