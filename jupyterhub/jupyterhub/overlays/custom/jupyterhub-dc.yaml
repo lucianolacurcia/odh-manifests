@@ -6,3 +6,16 @@ metadata:
   name: jupyterhub
 spec:
   replicas: 1
+  template:
+    spec:
+      containers:
+        volumeMounts:
+          - mountPath: /etc/pki/ca-trust/extracted/pem
+            name: trusted-ca
+            readOnly: true
+      volumes:
+      - name: trusted-ca
+        configMap:
+          name: config-trusted-cabundle
+          items:
+            - key: ca-bundle.crt
