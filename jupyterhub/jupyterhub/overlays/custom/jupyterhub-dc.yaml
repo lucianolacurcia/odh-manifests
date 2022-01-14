@@ -9,6 +9,7 @@ spec:
   template:
     spec:
       containers:
+      - name: jupyterhub
         volumeMounts:
           - mountPath: /etc/pki/ca-trust/extracted/pem
             name: trusted-ca
