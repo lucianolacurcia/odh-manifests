@@ -1,22 +1,17 @@
-apiVersion: apps.openshift.io/v1
-kind: DeploymentConfig
-metadata:
-  labels:
-    app: jupyterhub
-  name: jupyterhub
-spec:
-  replicas: 1
-  # template:
-  #   spec:
-  #     containers:
-  #     - name: jupyterhub
-  #       volumeMounts:
-  #       - mountPath: /etc/pki/ca-trust/extracted/pem
-  #         name: trusted-ca
-  #         readOnly: true
-  #     volumes:
-  #     - name: trusted-ca
-  #       configMap:
-  #         name: config-trusted-cabundle
-  #         items:
-  #         - key: ca-bundle.crt
+- op: replace
+  path: /spec/replicas/
+  value: 1
+- op: add
+  path: /spec/template/spec/volumes/-
+  value:
+    name: trusted-ca
+    configMap:
+      name: config-trusted-cabundle
+      items:
+      - key: ca-bundle.crt
+- op: add
+  path: /spec/template/spec/containers/0/volumeMounts/-
+  value:
+    mountPath: /etc/pki/ca-trust/extracted/pem
+    name: trusted-ca
+    readOnly: true

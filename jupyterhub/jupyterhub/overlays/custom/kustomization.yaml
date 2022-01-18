@@ -3,6 +3,14 @@ kind: Kustomization
 bases:
 - ../../base
 
-patchesStrategicMerge:
-- traefik-deployment.yaml
-- jupyterhub-dc.yaml
+patchesJson6902:
+- target:
+    version: v1 # apiVersion
+    kind: DeploymentConfig
+    name: jupyterhub
+  path: jupyterhub-dc.yaml
+- target:
+    version: v1
+    kind: Deployment
+    name: traefik-proxy
+  path: traefik-deployment.yaml
