@@ -10,7 +10,7 @@
       items:
       - key: ca-bundle.crt
 - op: add
-  path: /spec/template/spec/containers/0/volumeMounts/-
+  path: /spec/template/spec/containers/1/volumeMounts/-
   value:
     mountPath: /etc/pki/ca-trust/extracted/pem
     name: trusted-ca
