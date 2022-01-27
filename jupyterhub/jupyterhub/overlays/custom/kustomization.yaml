@@ -5,9 +5,10 @@ bases:
 
 patchesJson6902:
 - target:
-    version: v1 # apiVersion
+    version: v1
     kind: DeploymentConfig
     name: jupyterhub
+    group: apps.openshift.io
   path: jupyterhub-dc.yaml
 - target:
     version: v1
