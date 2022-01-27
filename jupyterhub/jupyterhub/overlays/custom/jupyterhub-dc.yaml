@@ -9,6 +9,7 @@
       name: config-trusted-cabundle
       items:
       - key: ca-bundle.crt
+        path: tls-ca-bundle.pem
 - op: add
   path: /spec/template/spec/containers/1/volumeMounts/-
   value:
