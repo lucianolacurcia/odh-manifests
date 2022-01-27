@@ -10,8 +10,7 @@ patchesJson6902:
     name: jupyterhub
     group: apps.openshift.io
   path: jupyterhub-dc.yaml
-- target:
-    version: v1
-    kind: Deployment
-    name: traefik-proxy
-  path: traefik-deployment.yaml
+
+replicas:
+- name: traefik-proxy
+  count: 1
