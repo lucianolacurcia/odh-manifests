@@ -13,6 +13,6 @@
 - op: add
   path: /spec/template/spec/containers/1/volumeMounts/-
   value:
-    mountPath: /etc/pki/ca-trust/extracted/pem
+    mountPath: /etc/pki/ca-trust/
     name: trusted-ca
     readOnly: true
